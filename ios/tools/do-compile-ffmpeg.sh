@@ -71,8 +71,9 @@ FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --disable-stripping"
 ##
 FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --arch=$FF_ARCH"
 FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --target-os=$FF_TAGET_OS"
-FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --enable-static"
-FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --disable-shared"
+FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --disable-static"
+FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --enable-shared"
+FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --disable-programs"
 FFMPEG_EXTRA_CFLAGS=
 
 # i386, x86_64
@@ -206,7 +207,7 @@ FFMPEG_DEP_OPENSSL_INC=$FF_BUILD_ROOT/build/$FF_BUILD_NAME_OPENSSL/output/includ
 FFMPEG_DEP_OPENSSL_LIB=$FF_BUILD_ROOT/build/$FF_BUILD_NAME_OPENSSL/output/lib
 #--------------------
 # with openssl
-if [ -f "${FFMPEG_DEP_OPENSSL_LIB}/libssl.a" ]; then
+if [ -f "${FFMPEG_DEP_OPENSSL_LIB}/libssl.dylib" ]; then
     FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --enable-openssl"
 
     FFMPEG_CFLAGS="$FFMPEG_CFLAGS -I${FFMPEG_DEP_OPENSSL_INC}"

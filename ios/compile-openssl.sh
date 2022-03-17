@@ -60,7 +60,7 @@ do_lipo_all () {
     echo "lipo archs: $FF_ALL_ARCHS"
     for FF_LIB in $FF_LIBS
     do
-        do_lipo "$FF_LIB.a";
+        do_lipo "$FF_LIB.dylib";
     done
 
     cp -R $UNI_BUILD_ROOT/build/openssl-armv7/output/include $UNI_BUILD_ROOT/build/universal/

@@ -84,7 +84,7 @@ do_lipo_all () {
     echo "lipo archs: $FF_ALL_ARCHS"
     for FF_LIB in $FF_LIBS
     do
-        do_lipo_ffmpeg "$FF_LIB.a";
+        do_lipo_ffmpeg "$FF_LIB.dylib";
     done
 
     ANY_ARCH=
@@ -112,7 +112,7 @@ do_lipo_all () {
 
     for SSL_LIB in $SSL_LIBS
     do
-        do_lipo_ssl "$SSL_LIB.a";
+        do_lipo_ssl "$SSL_LIB.dylib";
     done
 }
 
